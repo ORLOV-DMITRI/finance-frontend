@@ -1,0 +1,55 @@
+@import "/public/style/variables";
+
+.btn {
+  background-color: $bg-color;
+  border: 1px solid $border;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  svg {
+    width: 20px;
+    height: 20px;
+    fill: $white;
+  }
+
+  &:hover {
+    background-color: $bg-gray-hover;
+
+    .tooltip {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+  }
+
+}
+.tooltip {
+  position: absolute;
+  //top: -30px;
+  bottom: -30px;
+  transform: translateY(10px);
+  opacity: 0;
+  visibility: hidden;
+  width: 100px;
+  height: 25px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+
+.plus {
+  background-color: $green;
+  color: $dark;
+}
+.minus {
+  background-color: $red;
+  color: $white;
+}

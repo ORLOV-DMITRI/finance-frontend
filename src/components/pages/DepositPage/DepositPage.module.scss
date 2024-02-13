@@ -1,0 +1,19 @@
+@import "/public/style/variables";
+
+
+.total {
+  color: $white;
+  font-size: 18px;
+  margin-bottom: 20px;
+  span {
+    color: $green;
+  }
+}
+//
+//.scroll {
+//  position: fixed;
+//  top: 100px;
+//  z-index: 100;
+//  background-color: $bg-color;
+//  width: 100%;
+//}

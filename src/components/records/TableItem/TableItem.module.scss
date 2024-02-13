@@ -1,0 +1,65 @@
+@import "/public/style/variables";
+
+.title {
+  color: rgb(161, 161, 170);
+  font-weight: 600;
+  padding: 8px 12px;
+
+  background-color: $card;
+}
+
+.item {
+  color: rgb(242, 242, 242);
+  font-weight: 400;
+  padding: 12px 12px;
+  transition: 0.3s;
+  cursor: pointer;
+  user-select: none;
+
+  &:hover {
+    background-color: rgb(38, 38, 38);
+  }
+}
+.active {
+  background-color: rgb(38, 38, 38);
+}
+.costItem {
+  font-size: 14px;
+  display: grid;
+  grid-template-columns: auto 1fr 1fr 1fr;
+
+
+  &:not(:last-child) {
+    border-bottom: 1px solid $border;
+  }
+  &:first-child {
+    border-bottom: 1px solid $border;
+  }
+  div {
+    display: flex;
+    justify-self: center;
+    width: max-content;
+    align-self: end;
+    justify-content: flex-start;
+  }
+  div:last-child {
+    justify-content: flex-end;
+  }
+}
+.name {
+  width: max-content;
+}
+.income {
+
+  span {
+    color: $green;
+
+  }
+}
+.cost {
+
+
+  span {
+    color: #dd3434;
+  }
+}

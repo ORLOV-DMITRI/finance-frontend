@@ -1,0 +1,19 @@
+@import "/public/style/variables";
+
+.listTitle {
+  color: rgb(161, 161, 170);
+  display: grid;
+  padding: 8px 12px;
+  grid-template-columns: auto 1fr 1fr 1fr;
+  border-bottom: 1px solid $border;
+
+  div {
+    justify-self: center;
+  }
+}
+.tableTitle {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+}

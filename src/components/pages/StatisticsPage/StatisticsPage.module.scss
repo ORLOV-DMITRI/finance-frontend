@@ -1,0 +1,18 @@
+@import "/public/style/variables";
+.homePage {
+  width: 100%;
+  height: 100%;
+}
+
+
+.content {
+  margin-top: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  h1 {
+    color: $green;
+    font-size: 40px;
+  }
+}

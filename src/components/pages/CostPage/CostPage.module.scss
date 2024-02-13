@@ -1,0 +1,27 @@
+@import "/public/style/variables";
+
+
+.costPage {
+
+}
+.title {
+  color: $white;
+  font-size: 32px;
+  margin-bottom: 30px;
+}
+.content {
+  margin-top: 50px;
+  display: flex;
+  gap: 50px;
+}
+
+.costList {
+  flex: 1;
+  width: 60%;
+}
+
+
+.costAside {
+  width: 30%;
+  background-color: $card;
+}

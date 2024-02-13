@@ -1,0 +1,34 @@
+@import "/public/style/variables";
+
+
+.calendar {
+  width: 100px;
+}
+.field {
+  max-height: 65px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 8px;
+
+  label {
+    color: #FFFFFF;
+    font-weight: 500;
+    font-size: 14px;
+    margin-left: 5px;
+  }
+
+}
+.customDateInput {
+  width: 100%;
+  border: 1px solid $border;
+  color: #FFFFFF;
+  background-color: $bg-color;
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 14px;
+  font-weight: 400;
+  max-width: 390px;
+  height: 2.5rem;
+  cursor: pointer;
+}

@@ -1,0 +1,30 @@
+@import '/public/styles/media';
+@import '/public/styles/mixins';
+@import '/public/styles/variables';
+
+.main {
+    margin-top: 60px;
+}
+.fields {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+.policy {
+    margin-top: 20px;
+    opacity: 0.3;
+    color: $blue-dark;
+    font-family: TT Dogma;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+.link {
+    text-decoration-line: underline;
+}
+.btn {
+    margin-top: 40px;
+    width: 100%;
+    height: 60px;
+}

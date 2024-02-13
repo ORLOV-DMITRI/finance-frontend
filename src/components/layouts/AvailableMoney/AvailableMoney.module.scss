@@ -1,0 +1,14 @@
+@import "/public/style/variables";
+
+
+.total {
+  font-size: 18px;
+  color: $white;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  span {
+    font-size: 20px;
+    color: $green;
+  }
+}

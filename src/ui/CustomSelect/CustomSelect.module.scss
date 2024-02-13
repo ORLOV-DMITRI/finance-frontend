@@ -1,0 +1,80 @@
+@import "/public/style/variables";
+
+.select {
+  background-color: $bg-dark;
+  padding: 8px 12px;
+  user-select: none;
+  width: 250px;
+  position: relative;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+  &:hover {
+    background-color: $bg-color;
+  }
+}
+
+.selected {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+
+}
+
+.optionsList {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 10px 0 10px 20px;
+  background-color: $bg-dark;
+  border-radius: 6px;
+  position: absolute;
+  top: 115%;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  margin: 0;
+  list-style: none;
+  border: 1px solid $bg-color;
+  overflow-y: auto;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s;
+}
+
+.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.option {
+  padding: 8px 12px;
+  color: $white-muted;
+  cursor: pointer;
+  position: relative;
+  font-size: 14px;
+
+  transition: 0.3s;
+  svg {
+    display: none;
+  }
+  &:hover {
+    color: $white;
+  }
+}
+.active {
+  color: $white;
+
+  svg {
+    position: absolute;
+    left: -10px;
+    display: inline-block;
+    stroke: $white
+  }
+}
+
+.selected {
+  color: $white;
+  font-size: 14px;
+}

@@ -1,0 +1,30 @@
+@import "/public/style/variables";
+
+
+.modal {
+    position: fixed;
+    //width: 70vw;
+    border: 2px solid $border;
+    border-radius: 6px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: $card;
+    //padding: 28px 48px 48px 48px;
+    z-index: 1000;
+}
+
+.modalClose {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    width: 30px;
+    height: 30px;
+    transition: 0.3s;
+    cursor: pointer;
+    svg {
+        fill: $white;
+        display: block;
+    }
+
+}

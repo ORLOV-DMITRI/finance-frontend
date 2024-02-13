@@ -1,0 +1,14 @@
+@import "/public/style/variables";
+.item {
+
+  width: calc(33% - 8px);
+  position: relative;
+  transition: 0.6s;
+  height: 220px;
+
+  &:hover {
+    border: 1px solid $green;
+
+
+  }
+}

@@ -1,0 +1,47 @@
+@import "/public/style/variables";
+
+
+.content {
+  display: flex;
+  gap: 50px;
+  overflow: auto;
+  max-height: 70vh;
+  min-height: 70vh;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  padding-right: 20px;
+
+}
+
+.content::-webkit-scrollbar {
+  width: 10px;
+
+}
+
+.content::-webkit-scrollbar-track {
+  background: $bg-color;
+  border-radius: 6px;
+
+}
+
+.content::-webkit-scrollbar-thumb {
+  background: $white;
+  border-radius: 6px;
+}
+
+.content::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+.list {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  width: 100%;
+}
+.aside {
+  width: 30%;
+  height: 400px;
+  background-color: #fff;
+}
+

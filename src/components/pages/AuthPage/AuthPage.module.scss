@@ -1,0 +1,47 @@
+@import "/public/style/variables";
+
+.content {
+  margin-top: 60px;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  font-size: 24px;
+  color: $white;
+  font-weight: 500;
+}
+
+.subtitle {
+  margin-top: 8px;
+  color: $gray-text;
+  font-size: 14px;
+}
+
+.form {
+  width: 40%;
+  margin-top: 24px;
+  gap: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.btn {
+  width: 100%;
+  max-width: 390px;
+  min-width: 250px;
+  margin-top: 10px;
+  &:last-child {
+    margin-top: 0px;
+  }
+
+}
+
+.text {
+  margin-top: 18px;
+  color: $gray-text;
+  font-size: 14px;
+}

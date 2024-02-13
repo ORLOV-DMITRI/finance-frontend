@@ -1,0 +1,23 @@
+@import "/public/style/variables";
+
+
+.homeHeader {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.currentDate {
+  font-weight: 500;
+  font-size: 30px;
+  color: $green;
+
+
+
+}
+.title {
+  color: $white;
+  font-weight: 500;
+  font-size: 40px;
+}

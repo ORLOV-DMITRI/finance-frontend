@@ -1,0 +1,42 @@
+@import "/public/style/variables";
+
+.quote {
+  position: relative;
+  width: 350px;
+  min-height: 150px;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.quoteText {
+  margin-top: 10px;
+  font-size: 16px;
+  color: $white-hover;
+}
+.author {
+  margin-top: 10px;
+  font-size: 14px;
+  color: $white-muted;
+  font-style: italic;
+}
+.title {
+  font-size: 17px;
+  color: $green;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.icon {
+  fill: $green;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+
+  &:hover {
+    fill: $red;
+  }
+
+}

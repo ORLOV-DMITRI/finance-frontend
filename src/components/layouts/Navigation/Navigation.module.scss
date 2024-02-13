@@ -1,0 +1,28 @@
+@import "/public/style/variables";
+
+.navigation {
+  height: 40px;
+  background-color: $bg-gray;
+  border-radius: 8px;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.linkItem {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: normal;
+  background-color: $bg-gray;
+  color: $gray-text;
+  padding: 6px 15px;
+  border-radius: 4px;
+  transition: 0.3s;
+
+}
+
+.active {
+  background-color: $bg-dark;
+  color: $white;
+}

@@ -1,0 +1,11 @@
+@import "/public/style/variables";
+.aside {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  min-height: 250px;
+}
+.asideBtn {
+  width: 100%;
+}

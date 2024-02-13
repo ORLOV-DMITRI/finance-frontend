@@ -1,0 +1,60 @@
+@import "/public/style/variables";
+
+.info {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  gap: 30px;
+}
+
+.infoItem {
+  padding: 15px 20px;
+  transition: 0.3s;
+  height: 65px;
+
+  &:last-child {
+    a {
+
+    }
+
+    span {
+      color: $red;
+    }
+  }
+
+  &:hover {
+    border: 1px solid $white-hover;
+  }
+}
+
+.current {
+  color: $white;
+  font-size: 25px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+
+  span {
+    color: $green;
+    font-size: 27px;
+
+  }
+
+}
+
+.infoLink {
+  .current {
+    span {
+      color: $green;
+    }
+  }
+
+  &:last-child {
+
+    span {
+      color: $red;
+
+    }
+  }
+}

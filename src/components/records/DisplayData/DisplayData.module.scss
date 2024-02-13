@@ -1,0 +1,43 @@
+@import "/public/style/variables";
+
+
+.content {
+  margin-top: 10px;
+  display: flex;
+  gap: 50px;
+}
+
+.costList {
+  flex: 1;
+  width: 60%;
+  overflow: auto;
+  max-height: 80vh;
+  min-height: 70vh;
+  overflow-x: hidden;
+}
+.costList::-webkit-scrollbar {
+  width: 7px;
+}
+
+.costList::-webkit-scrollbar-track {
+  background: $bg-color;
+  border-radius: 6px;
+
+}
+
+.costList::-webkit-scrollbar-thumb {
+  background: $white;
+  border-radius: 6px;
+
+}
+
+.costList::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+
+.costAside {
+  width: 30%;
+  max-height: 250px;
+  background-color: $card;
+}

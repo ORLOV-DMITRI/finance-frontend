@@ -1,0 +1,25 @@
+@import "/public/style/variables";
+
+.homePage {
+  width: 100%;
+  height: 100%;
+}
+
+
+.content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-top: 40px;
+
+}
+
+.aside {
+  min-width: 20%;
+}
+
+
+.info {
+  display: flex;
+  gap: 30px;
+}

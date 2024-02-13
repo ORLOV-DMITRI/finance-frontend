@@ -1,0 +1,20 @@
+@import "/public/style/variables";
+.header {
+  border-bottom: 1px solid $border;
+  width: 100%;
+
+}
+
+.nav {
+  height: 56px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.welcome {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  color: $white;
+}

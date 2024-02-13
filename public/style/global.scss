@@ -1,0 +1,196 @@
+@import "media";
+@import "variables";
+.calendar-box {
+  text-align: center;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+}
+
+.calendar-title {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.calendar {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  position: absolute;
+  z-index: 1;
+  display: none;
+}
+
+.header {
+  background-color: #3498db;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+#prevBtn,
+#nextBtn {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#monthYear {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+  padding: 10px;
+}
+
+.day {
+  padding: 10px;
+  text-align: center;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.day.current {
+  background-color: #3498db;
+  color: white;
+}
+
+.day.selected {
+  background-color: #2ecc71;
+  color: white;
+}
+
+#dateInput {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  outline: none;
+  cursor: pointer;
+}
+
+ul,
+li,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: currentcolor;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+
+  -webkit-text-fill-color:  #FFFFFF;
+  -webkit-box-shadow: 0 0 0 1000px #000 inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+body {
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  background-color: #0C0A09;
+  flex-direction: column;
+  color: rgb(24, 24, 27);
+}
+button {
+  font-family: inherit;
+}
+.main {
+  flex: 1;
+  width: 100%;
+  margin-top: 15px;
+}
+
+.container {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 91px;
+
+  @media (width <= 1600px) {
+    max-width: 1200px;
+  }
+  //@include md {
+  //  max-width: 1440px;
+  //  padding: 0 80px;
+  //}
+  //@include lg {
+  //  //max-width: 1280px;
+  //  //padding: 0 40px;
+  //}
+  //@include xs {
+  //  max-width: 100%;
+  //  padding: 0 20px;
+  //}
+}
+.react-datepicker {
+  font-size: 14px !important;
+  color: $white !important;
+  background-color: $bg-color !important;
+
+  &__current-month {
+    color: $white !important;
+  }
+  &__header {
+    background-color: $bg-color !important;
+    border: none !important;
+  }
+
+  &__day-name {
+    color: $white!important;
+    font-size: 14px !important;
+  }
+
+  &__day {
+    color: $white !important;
+    font-size: 13px !important;
+
+    &--keyboard-selected,
+    &--selected {
+      border-radius: 25px !important;
+      background: $bg-gray !important;
+    }
+    &--disabled {
+      color: #fff !important;
+    }
+  }
+}
+
+.custom-toast-container {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10000; /* Убедитесь, что контейнер находится поверх других элементов */
+}

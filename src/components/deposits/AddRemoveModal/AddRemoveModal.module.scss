@@ -1,0 +1,12 @@
+@import "/public/style/variables";
+.editMode {
+  width: 35vw;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.removeSumError {
+  color: $red;
+  font-size: 12px;
+}

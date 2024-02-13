@@ -1,0 +1,14 @@
+@import "/public/style/variables";
+
+.addModal {
+  width: 500px;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.addTitle {
+  color: $white;
+  font-size: 25px;
+  font-weight: 500;
+}
