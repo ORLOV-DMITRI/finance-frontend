@@ -8,13 +8,13 @@ type HomePageType = {}
 
 const HomePage: FC<HomePageType> = async () => {
 
-    const {text, author} = await fetchQuote()
+    // const {text, author} = await fetchQuote()
     // const text = ''
     // const author = ''
 
     return (
         <section className={styles.homePage}>
-           <HomeContent quote={{text, author}}/>
+            <HomeContent/>
         </section>);
 };
 

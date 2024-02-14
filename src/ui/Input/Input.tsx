@@ -20,7 +20,7 @@ export const Input: FC<UiInputType & FieldHookConfig<string>> = ({label, classNa
             <label htmlFor='field'>
                 {label}
             </label>
-            <input autoComplete={'off'} maxLength={props.maxLength} type={props.type} {...field} name={props.name} placeholder={props.placeholder}
+            <input  maxLength={props.maxLength} type={props.type} {...field} name={props.name} placeholder={props.placeholder}
                    className={styles.input} onFocus={(e) => e.target.select()}/>
             <div className={styles.error}>{error && touched && error}</div>
 

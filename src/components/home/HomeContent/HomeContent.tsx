@@ -19,12 +19,12 @@ import HomeActions from "@/components/home/HomeActions/HomeActions";
 import HomeActions1 from "@/components/home/HomeActions1/HomeActions";
 
 type HomePageType = {
-    quote: { text: string; author: string; };
+    // quote: { text: string; author: string; };
 
 }
 
 
-const HomeContent: FC<HomePageType> = ({quote}) => {
+const HomeContent: FC<HomePageType> = () => {
 
     const [isVisibleQuote, setIsVisibleQuote] = useState(true)
 
@@ -49,7 +49,7 @@ const HomeContent: FC<HomePageType> = ({quote}) => {
                     <HomeActions1/>
                 </div>
                 <div className={styles.aside}>
-                    {isVisibleQuote && <HomeQuote quote={quote} onClose={() => setIsVisibleQuote(false)}/>}
+                    {/*{isVisibleQuote && <HomeQuote quote={quote} onClose={() => setIsVisibleQuote(false)}/>}*/}
                 </div>
             </div>
         </div>)
