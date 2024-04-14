@@ -6,7 +6,6 @@ import AddIcon from '/public/svg/add.svg'
 import EditIcon from '/public/svg/edit.svg'
 import DeleteIcon from '/public/svg/x.svg'
 import {Modal} from "@/ui/Modal";
-import {IForm} from "@/components/iForm/iForm";
 import toast from "react-hot-toast";
 import {useAddCostMutation} from "@/hooks/cost/useAddCostMutation";
 import {useAddIncomeMutation} from "@/hooks/income/useAddIncomeMutation";
@@ -16,6 +15,7 @@ import {useSelection} from "@/components/records/DisplayData/SelectionProvider/S
 import {useUpdateCostMutation} from "@/hooks/cost/useUpdateCostMutation";
 import {useUpdateIncomeMutation} from "@/hooks/income/useUpdateIncomeMutation";
 import {RecordClientType, RecordServerType} from "@/types/types";
+import {CustomForm} from "@/components/CustomForm/CustomForm";
 
 type Type = {
     type: string
@@ -83,14 +83,16 @@ export const Aside: FC<Type> = ({type}) => {
                         variant={'white'}
                         size={'full'}
                         onClick={() => setIsModalOpen(true)}>
-                    Добавить запись
+
+                    <span>Добавить запись</span>
                 </Button>
                 {checkedItems.length === 1 && (
                     <Button Icon={EditIcon}
                             variant={'dark'}
                             size={'full'}
                             onClick={handleAddCheckedItem}>
-                        Изменить запись
+
+                        <span>    Изменить запись</span>
                     </Button>
                 )}
                 {checkedItems.length > 0 && (
@@ -98,7 +100,8 @@ export const Aside: FC<Type> = ({type}) => {
                             variant={'delete'}
                             size={'full'}
                             onClick={handleDelete}>
-                        Удалить запись
+
+                        <span> Удалить запись</span>
                     </Button>
                 )}
 
@@ -107,7 +110,7 @@ export const Aside: FC<Type> = ({type}) => {
                 onClose={() => setIsModalOpen(false)}
                 isOpen={isOpenModal}
             >
-                <IForm onSubmit={handleAdd} selectedItem={selectedItem} onUpdate={handleUpdate} type={type}/>
+                <CustomForm onSubmit={handleAdd} selectedItem={selectedItem} onUpdate={handleUpdate} type={type}/>
             </Modal>
         </>
 

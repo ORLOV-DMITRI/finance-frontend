@@ -118,7 +118,7 @@ select:-webkit-autofill:focus {
 }
 body {
   height: 100vh;
-  overflow: hidden;
+  //overflow: hidden;
   display: flex;
   background-color: #0C0A09;
   flex-direction: column;
@@ -131,15 +131,22 @@ button {
   flex: 1;
   width: 100%;
   margin-top: 15px;
+
+  @include xs {
+    padding-bottom: 100px;
+  }
 }
 
 .container {
-  max-width: 1600px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 0 91px;
 
-  @media (width <= 1600px) {
-    max-width: 1200px;
+  @include lg-mid {
+    padding: 0 40px;
+  }
+  @include xs {
+    padding: 0 10px;
   }
   //@include md {
   //  max-width: 1440px;

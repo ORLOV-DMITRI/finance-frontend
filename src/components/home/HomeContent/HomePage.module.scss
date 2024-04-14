@@ -1,4 +1,5 @@
 @import "/public/style/variables";
+@import "/public/style/media";
 
 .homePage {
   width: 100%;
@@ -22,4 +23,9 @@
 .info {
   display: flex;
   gap: 30px;
+
+  @include lg-mid {
+    flex-direction: column;
+    width: 100%;
+  }
 }

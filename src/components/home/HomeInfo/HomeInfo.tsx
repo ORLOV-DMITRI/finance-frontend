@@ -34,13 +34,12 @@ export default function HomeInfo({isAuthenticated}: HomeInfoType) {
             avail: formattedAvailable
         };
     }, [currentCosts, depositTotal, available]);
-
     return (
         <div className={styles.info}>
             <Link href={'/deposit'} className={styles.infoLink}>
                 <Card className={styles.infoItem}>
                     <div className={styles.current}>
-                        В конвертах: <span>{deposits} ₽</span>
+                        В конвертах: <span>{deposits !== undefined ? deposits : 0} ₽</span>
                     </div>
                 </Card>
             </Link>
@@ -48,7 +47,7 @@ export default function HomeInfo({isAuthenticated}: HomeInfoType) {
             <Link href={'/income'} className={styles.infoLink}>
                 <Card className={styles.infoItem}>
                     <div className={styles.current}>
-                        Доступно: <span>{avail} ₽</span>
+                        Доступно: <span>{avail !== undefined ? avail : 0} ₽</span>
                     </div>
 
                 </Card>
@@ -56,7 +55,7 @@ export default function HomeInfo({isAuthenticated}: HomeInfoType) {
             <Link href={'/cost'} className={styles.infoLink}>
                 <Card className={styles.infoItem}>
                     <div className={styles.current}>
-                        Расходы сегодня: <span>{costs} ₽</span>
+                        Расходы сегодня: <span>{costs !== undefined ? costs : 0} ₽</span>
                     </div>
 
                 </Card>

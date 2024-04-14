@@ -1,14 +1,20 @@
 'use client'
 import styles from './Navigation.module.scss'
-import {FC} from "react";
+import {FC, useRef, useState} from "react";
 import Link from "next/link";
 import {usePathname} from "next/navigation";
 import cn from "classnames";
 
+import gsap from "gsap";
+import {useGSAP} from "@gsap/react";
+import {useWindowSize} from "@/hooks/useWindowSize";
+
+gsap.registerPlugin(useGSAP);
+
 type NavigationType = {}
 
 
-const links = [
+export const links = [
     {
         href: '/',
         name: 'главная'
@@ -36,12 +42,23 @@ export const Navigation: FC<NavigationType> = () => {
     const path = usePathname()
 
 
-    return (<div className={cn(styles.navigation)}>
-        {links.map(item => (
-            <Link key={item.name} href={item.href}
-                  className={cn(styles.linkItem, item.href === path && styles.active)}>
-                {item.name}
-            </Link>
-        ))}
-    </div>);
+
+
+
+    return (
+        <>
+
+            <div className={cn(styles.navigation)}>
+                <div className={styles.links}>
+                    {links.map(item => (
+                        <Link key={item.name} href={item.href}
+                              className={cn(styles.linkItem, item.href === path && styles.active)}>
+                            {item.name}
+                        </Link>
+                    ))}
+                </div>
+
+            </div>
+        </>
+    );
 };

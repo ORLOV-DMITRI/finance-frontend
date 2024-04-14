@@ -1,10 +1,22 @@
 @import "/public/style/variables";
+@import "/public/style/media";
 .editMode {
   width: 35vw;
   padding: 50px;
   display: flex;
   flex-direction: column;
   gap: 20px;
+  @include lg {
+    width: 50vw;
+  }
+  @include lg-mini {
+    width: 60vw;
+    padding: 40px;
+  }
+  @include xs {
+    width: 100%;
+    padding: 15px;
+  }
 }
 .removeSumError {
   color: $red;

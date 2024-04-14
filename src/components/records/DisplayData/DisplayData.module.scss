@@ -1,10 +1,16 @@
 @import "/public/style/variables";
+@import "/public/style/media";
 
 
 .content {
   margin-top: 10px;
   display: flex;
   gap: 50px;
+
+  @include lg {
+    flex-direction: column-reverse;
+    gap: 15px;
+  }
 }
 
 .costList {
@@ -14,6 +20,11 @@
   max-height: 80vh;
   min-height: 70vh;
   overflow-x: hidden;
+  background-color: $bg-color;
+
+  @include lg {
+    width: 100%;
+  }
 }
 .costList::-webkit-scrollbar {
   width: 7px;
@@ -40,4 +51,14 @@
   width: 30%;
   max-height: 250px;
   background-color: $card;
+
+  @include lg {
+    width: 100%;
+  }
+  @media (width <= 890px) {
+    width: max-content;
+  }
+  @include xs {
+    width: 100% ;
+  }
 }

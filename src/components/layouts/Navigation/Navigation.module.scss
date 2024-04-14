@@ -1,24 +1,45 @@
 @import "/public/style/variables";
+@import "/public/style/media";
 
-.navigation {
-  height: 40px;
-  background-color: $bg-gray;
-  border-radius: 8px;
-  padding: 4px;
+.links {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
+.navigation {
+  height: 55px;
+  background-color: $bg-gray;
+  border-radius: 8px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  justify-content: space-between;
+  transform: translateX(0);
+
+  @include lg {
+    height: 40px;
+    padding: 4px;
+  }
+  @include lg-mid {
+    display: none;
+  }
+}
 
 .linkItem {
   font-weight: 500;
-  font-size: 14px;
+  font-size: 20px;
   line-height: normal;
   background-color: $bg-gray;
   color: $gray-text;
-  padding: 6px 15px;
+  padding: 10px 20px;
   border-radius: 4px;
   transition: 0.3s;
+
+  @include lg {
+    font-size: 14px;
+    padding: 6px 15px;
+  }
 
 }
 
@@ -26,3 +47,6 @@
   background-color: $bg-dark;
   color: $white;
 }
+
+
+

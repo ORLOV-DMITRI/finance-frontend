@@ -1,4 +1,5 @@
 @import "/public/style/variables";
+@import "/public/style/media";
 .item {
   padding: 24px;
   color: $white;
@@ -24,6 +25,18 @@
 
     }
 
+  }
+
+  @include lg-mini {
+    .btnsBlock {
+      opacity: 1;
+      visibility: visible;
+    }
+    .deleteIcon {
+      opacity: 1;
+      visibility: visible;
+
+    }
   }
 }
 

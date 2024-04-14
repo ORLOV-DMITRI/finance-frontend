@@ -1,4 +1,5 @@
 @import "/public/style/variables";
+@import "/public/style/media";
 
 
 .actions {
@@ -6,9 +7,15 @@
   flex-direction: column;
   height: 100%;
   gap: 30px;
+
+  @include lg-mid {
+    flex-direction: row;
+    justify-content: space-around;
+  }
 }
 
 .action {
+  position: relative;
   cursor: pointer;
   padding: 10px 10px;
   display: flex;
@@ -24,9 +31,43 @@
     transition: 0.3s;
   }
 
+  &:hover .tooltip {
+    left: 120%;
+    opacity: 1;
+  }
+
+  @media (width <= 680px) {
+    &:hover .tooltip {
+      bottom: -80%;
+      left: auto;
+      opacity: 1;
+    }
+  }
+  @include xs {
+
+  }
+
 
 }
+.tooltip {
+  right: 0;
+  position: absolute;
+  color: $green;
+  opacity: 0;
+  transition: 0.3s;
+  //left: 120%;
+  left: 80%;
 
+  @media (width <= 680px) {
+    bottom: -80%;
+    left: auto;
+    right: auto;
+    opacity: 1;
+  }
+  @include xs {
+
+  }
+}
 .deposit {
 
   svg {
@@ -47,7 +88,18 @@
     fill: $red;
   }
 }
+.deposit {
+  svg {
+    transition: 0.3s;
+  }
+  &:hover {
+    border: 1px solid $green;
+  }
 
+  &:hover svg {
+    stroke: $green;
+  }
+}
 .income {
   svg {
     transition: 0.3s;

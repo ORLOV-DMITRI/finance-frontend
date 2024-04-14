@@ -1,4 +1,5 @@
 @import "/public/style/variables";
+@import "/public/style/media";
 
 
 .content {
@@ -11,6 +12,9 @@
   box-sizing: border-box;
   padding-right: 20px;
 
+  @include xs {
+    padding-right: 10px;
+  }
 }
 
 .content::-webkit-scrollbar {
@@ -31,6 +35,14 @@
 
 .content::-webkit-scrollbar-thumb:hover {
   background: #555;
+}
+
+@include xs {
+  .content::-webkit-scrollbar {
+    width: 5px;
+
+  }
+
 }
 .list {
   flex: 1;

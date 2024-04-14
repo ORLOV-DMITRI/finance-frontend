@@ -1,10 +1,38 @@
 @import "/public/style/variables";
+@import "/public/style/media";
 .aside {
   padding: 20px;
   display: flex;
   flex-direction: column;
   gap: 30px;
   min-height: 250px;
+
+  @include lg {
+    min-height: auto;
+    flex-direction: row;
+
+
+  }
+  @media (width <= 890px) {
+    button {
+      width: 100px;
+      span {
+        display: none;
+      }
+      svg {
+        left: 40%;
+      }
+    }
+  }
+  @include xs {
+    justify-content: space-between;
+    button {
+      width: 33%;
+      svg {
+        left: 35%;
+      }
+    }
+  }
 }
 .asideBtn {
   width: 100%;

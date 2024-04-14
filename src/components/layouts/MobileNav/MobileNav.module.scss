@@ -1,0 +1,41 @@
+@import "/public/style/variables";
+@import "/public/style/media";
+
+.mobileNav {
+  width: 100%;
+  height: 100vh;
+  background-color: $bg-gray;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 77px;
+  z-index: 20;
+  transform: translateY(-120%);
+}
+
+.links {
+  margin-top: 40px;
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.linkItem {
+  font-size: 30px;
+  color: $white;
+  transition: 0.3s;
+  cursor: pointer;
+  &:active {
+    color: $green;
+  }
+}
+.active {
+  color: $green;
+  text-decoration: underline;
+}
+.avail {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}

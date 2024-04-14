@@ -15,5 +15,21 @@
   position: sticky;
   top: 0;
   width: 100%;
-  z-index: 100;
+  z-index: 18;
+}
+.group {
+  padding: 15px 0;
+  background-color: $card;
+}
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.dateSeparator {
+  font-size: 12px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  margin-left: 10px;
+  color: $white;
 }

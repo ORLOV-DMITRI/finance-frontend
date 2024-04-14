@@ -1,8 +1,9 @@
 @import "/public/style/variables";
+@import "/public/style/media";
 
 
 .total {
-  font-size: 18px;
+  font-size: 20px;
   color: $white;
   display: flex;
   align-items: center;
@@ -10,5 +11,12 @@
   span {
     font-size: 20px;
     color: $green;
+  }
+
+  @include lg {
+    font-size: 16px;
+    span {
+      font-size: 18px;
+    }
   }
 }

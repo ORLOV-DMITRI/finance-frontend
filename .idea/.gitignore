@@ -3,3 +3,7 @@
 /workspace.xml
 # Editor-based HTTP Client requests
 /httpRequests/
+/client.iml
+/modules.xml
+/vcs.xml
+/watcherTasks.xml

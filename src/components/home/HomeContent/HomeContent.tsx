@@ -1,27 +1,17 @@
 'use client'
 import styles from './HomePage.module.scss'
-import {FC, useEffect, useMemo, useState} from "react";
+import {FC, useEffect, useState} from "react";
 import {useAuth} from "@/hooks/auth/useAuth";
 import {getDeposit} from "@/hooks/deposit/useDepositQuery";
-import {getCost, useCostQuery} from "@/hooks/cost/useCostQuery";
+import {getCost} from "@/hooks/cost/useCostQuery";
 import {getIncome} from "@/hooks/income/useIncomeQuery";
 import {queryKeys} from "@/react-query/constants";
 import {useQueryClient} from "@tanstack/react-query";
 import HomeHeader from "@/components/home/HomeHeader/HomeHeader";
-import HomeQuote from "@/components/home/HomeQuote/HomeQuote";
-import {priceRu} from "@/utils/priceRu";
-import {Card} from "@/ui/Card/Card";
-import {useAvailableQuery} from "@/hooks/statistics/useAvailableQuery";
-import {useDepositTotalQuery} from "@/hooks/statistics/useDepositTotal";
-import Link from "next/link";
 import HomeInfo from "@/components/home/HomeInfo/HomeInfo";
 import HomeActions from "@/components/home/HomeActions/HomeActions";
-import HomeActions1 from "@/components/home/HomeActions1/HomeActions";
 
-type HomePageType = {
-    // quote: { text: string; author: string; };
-
-}
+type HomePageType = {}
 
 
 const HomeContent: FC<HomePageType> = () => {
@@ -46,10 +36,7 @@ const HomeContent: FC<HomePageType> = () => {
             <div className={styles.content}>
                 <div className={styles.info}>
                     <HomeInfo isAuthenticated={isAuthenticated}/>
-                    <HomeActions1/>
-                </div>
-                <div className={styles.aside}>
-                    {/*{isVisibleQuote && <HomeQuote quote={quote} onClose={() => setIsVisibleQuote(false)}/>}*/}
+                    <HomeActions/>
                 </div>
             </div>
         </div>)

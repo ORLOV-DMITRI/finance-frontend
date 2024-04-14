@@ -1,4 +1,5 @@
 @import "/public/style/variables";
+@import "/public/style/media";
 
 
 .homeHeader {
@@ -6,6 +7,12 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+
+  @include xs {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
 }
 
 .currentDate {

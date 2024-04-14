@@ -1,4 +1,5 @@
 @import "/public/style/variables";
+@import "/public/style/media";
 
 .addModal {
   width: 500px;
@@ -6,9 +7,18 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+
+  @include xs {
+    width: 100%;
+    padding: 25px;
+  }
 }
 .addTitle {
   color: $white;
   font-size: 25px;
   font-weight: 500;
+
+  @include xs {
+    font-size: 20px;
+  }
 }

@@ -1,4 +1,5 @@
 @import "/public/style/variables";
+@import "/public/style/media";
 .item {
 
   width: calc(33% - 8px);
@@ -8,7 +9,12 @@
 
   &:hover {
     border: 1px solid $green;
+  }
 
-
+  @include lg-mid {
+    width: calc(50% - 8px);
+  }
+  @media (width <= 680px) {
+    width: 100%;
   }
 }

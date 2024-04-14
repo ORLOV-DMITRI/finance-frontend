@@ -4,60 +4,89 @@ import IncomeIcon from '/public/svg/income.svg'
 import DepositIcon from '/public/svg/deposit.svg'
 import {Card} from "@/ui/Card/Card";
 import cn from "classnames";
-import toast from "react-hot-toast";
+import {Modal} from "@/ui/Modal";
 import {useState} from "react";
+import DepositModal from "@/components/deposits/DepositModal/DepositModal";
+import {useAddDepositMutation} from "@/hooks/deposit/useAddDepositMutation";
+import {useAddCostMutation} from "@/hooks/cost/useAddCostMutation";
+import {useAddIncomeMutation} from "@/hooks/income/useAddIncomeMutation";
+import {RecordClientType} from "@/types/types";
+import {CustomForm} from "@/components/CustomForm/CustomForm";
+
 
 type HomeActionsType = {}
 
 export default function HomeActions({}: HomeActionsType) {
 
-    const [toastId, setToastId] = useState('')
+    const [isOpenModal, setIsModalOpen] = useState(false);
+    const [addDepositMode, setAddDepositMode] = useState(false)
+    const [newDepositName, setNewDepositName] = useState('')
+    const [type, setType] = useState('')
 
-    // Функция для отображения тоста с сохранением его ID
-    const showToast = (message: string) => {
-        // Возвращаем ID тоста для дальнейшего контроля
-        return toast(message, {
-            duration: Infinity, // Тост будет показан бесконечно, пока пользователь не уберет курсор
-            className: 'custom-toast-container',
-        });
-    };
+    const addMutation = type === 'cost' ? useAddCostMutation() : useAddIncomeMutation();
+    const addDeposit = useAddDepositMutation()
 
-    // Функция для скрытия тоста по его ID
-    const hideToast = (toastId: string) => {
-        toast.dismiss(toastId);
-    };
 
-    // Обработчики событий
-    const handleMouseEnter = (message: string) => {
-        console.log(message)
+    const onOpenCostModal = () => {
+        setIsModalOpen(true)
+        setType('cost')
+    }
+    const onOpenIncomeModal = () => {
+        setIsModalOpen(true)
+        setType('income')
+    }
+    const onOpenDepositModal = () => {
+        setAddDepositMode(true)
+        setType('deposit')
+    }
 
-        const toastId = showToast(message);
-        // Сохраняем ID тоста в атрибуте элемента, чтобы иметь к нему доступ в handleMouseLeave
-        setToastId(toastId)
-    };
-
-    const handleMouseLeave = () => {
-        hideToast(toastId);
-    };
-
+    const handleAdd = (values?: RecordClientType) => {
+        if (type === 'deposit') {
+            addDeposit({name: newDepositName});
+            setAddDepositMode(false)
+            setNewDepositName('')
+        } else {
+            if (values) {
+                values.sum = Number.parseInt(String(values.sum))
+                addMutation(values)
+                setIsModalOpen(false)
+            }
+        }
+    }
 
     return (
-        <div className={styles.actions}>
-            <Card className={cn(styles.action, styles.deposit)}
-                  onMouseEnter={() => handleMouseEnter('Создать быстрый конверт')}
-                  onMouseLeave={() => handleMouseLeave()}>
-                <DepositIcon/>
-            </Card>
-            <Card className={cn(styles.action, styles.income)}
-                  onMouseEnter={() => handleMouseEnter('Создать быстрый доход')}
-                  onMouseLeave={() => handleMouseLeave()}>
-                <IncomeIcon/>
-            </Card>
-            <Card className={cn(styles.action, styles.cost)}
-                  onMouseEnter={() => handleMouseEnter('Создать быстрый расход')}
-                  onMouseLeave={() => handleMouseLeave()}>
-                <CostIcon/>
-            </Card>
-        </div>
+        <>
+            <div className={styles.actions}>
+                <Card className={cn(styles.action, styles.deposit)} onClick={onOpenDepositModal}>
+                    <div className={styles.tooltip}>
+                        Быстрый конверт
+                    </div>
+                    <DepositIcon/>
+                </Card>
+                <Card className={cn(styles.action, styles.income)} onClick={onOpenIncomeModal}>
+                    <div className={styles.tooltip}>
+                        Быстрый доход
+                    </div>
+
+                    <IncomeIcon/>
+                </Card>
+                <Card className={cn(styles.action, styles.cost)} onClick={onOpenCostModal}>
+                    <div className={styles.tooltip}>
+                        Быстрый расход
+                    </div>
+                    <CostIcon/>
+                </Card>
+            </div>
+            <Modal
+                onClose={() => setIsModalOpen(false)}
+                isOpen={isOpenModal}
+            >
+                <CustomForm onSubmit={handleAdd} type={type} isVisibleRepeat={false}/>
+            </Modal>
+            <Modal onClose={() => setAddDepositMode(false)} isOpen={addDepositMode}>
+                <DepositModal newDepositName={newDepositName} handleAddDeposit={handleAdd}
+                              handleSetDepositName={(name: string) => setNewDepositName(name)}/>
+            </Modal>
+        </>
     );
 };

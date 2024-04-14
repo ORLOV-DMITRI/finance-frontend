@@ -1,0 +1,11 @@
+@import "/public/style/variables";
+
+
+.total {
+  color: $white;
+  font-size: 18px;
+  margin-bottom: 20px;
+  span {
+    color: $green;
+  }
+}

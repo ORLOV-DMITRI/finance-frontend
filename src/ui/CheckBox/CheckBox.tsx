@@ -3,7 +3,7 @@ import {FC} from "react";
 
 type CheckBoxType = {
     checked?: boolean
-    onChange: () => void
+    onChange?: () => void
 }
 
 export const CheckBox: FC<CheckBoxType> = ({checked}) => {

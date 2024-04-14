@@ -1,6 +1,6 @@
 'use client'
 
-import styles from './iForm.module.scss'
+import styles from './CustomForm.module.scss'
 import {FC, useState} from "react";
 import {Form, Formik} from "formik";
 import {Button} from "@/ui/Button/Button";
@@ -19,7 +19,7 @@ type iFormType = {
 }
 
 
-export const IForm: FC<iFormType> = ({onSubmit, selectedItem, onUpdate, type, isVisibleRepeat = true}) => {
+export const CustomForm: FC<iFormType> = ({onSubmit, selectedItem, onUpdate, type, isVisibleRepeat = true}) => {
     const [isClose, setIsClose] = useState(false)
 
     const initialValue: RecordClientType = {
@@ -43,7 +43,6 @@ export const IForm: FC<iFormType> = ({onSubmit, selectedItem, onUpdate, type, is
         <div className={styles.formContainer}>
             <div className={styles.title}>
                 {type === 'cost' ? 'Добавить расход' : 'Добавить доход'}
-
             </div>
             <div className={styles.form}>
                 <Formik initialValues={initialValue} onSubmit={handleSubmit}>

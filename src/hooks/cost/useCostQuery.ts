@@ -5,9 +5,8 @@ import {pathCost} from "@/hooks/cost/index";
 import {RecordServerType} from "@/types/types";
 
 export async function getCost(startDate?: string, endDate?: string): Promise<RecordServerType[]> {
-    let url = pathCost.all; // Предполагаем, что это ваш URL для получения расходов
+    let url = pathCost.all;
     const params = new URLSearchParams();
-
     if (startDate) params.append('startDate', startDate);
     if (endDate) params.append('endDate', endDate);
 

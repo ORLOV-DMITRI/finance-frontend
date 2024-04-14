@@ -1,3 +1,9 @@
+export type AuthFormValues = {
+    email: string;
+    password: string;
+}
+
+
 export type RecordServerType = {
     id: string,
     name: string,
