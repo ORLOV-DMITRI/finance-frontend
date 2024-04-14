@@ -1,4 +1,5 @@
 @import "/public/style/variables";
+@import "/public/style/media";
 
 .content {
   margin-top: 60px;
@@ -27,6 +28,13 @@
   gap: 16px;
   display: flex;
   flex-direction: column;
+
+  @include lg-mid {
+    width: 60%;
+  }
+  @include xs {
+    width: 80%;
+  }
 }
 
 .btn {
