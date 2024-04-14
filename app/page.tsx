@@ -15,7 +15,6 @@ const HomePage: FC<HomePageType> = () => {
     useEffect(() => {
         if (user.error) {
             toast.success(`Пожалуйста авторизуйтесь`)
-            console.log(toast)
             // router.push('/auth')
         } else {
             return

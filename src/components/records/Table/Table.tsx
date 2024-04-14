@@ -33,7 +33,6 @@ export const Table = () => {
 
         groups[date] = groups[date] || [];
         groups[date].push(item);
-        console.log(groups)
         return groups;
     }, {});
 

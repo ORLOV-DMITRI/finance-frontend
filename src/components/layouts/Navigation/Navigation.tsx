@@ -31,10 +31,6 @@ export const links = [
         href: '/deposit',
         name: 'конверты'
     },
-    {
-        href: '/statistics',
-        name: 'статистика'
-    },
 ]
 
 export const Navigation: FC<NavigationType> = () => {
