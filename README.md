@@ -1,22 +1,21 @@
-# Accounting for expenses and income
-(https://finance-client-gamma.vercel.app/)
+# Учет расходов и доходов - [Ссылка](https://finance-client-gamma.vercel.app/)
 
 
-This project is an expense tracking application that I created for the whole family to use. It is built using Next.js as the core technology stack, as well as Express.js for server-side work.
+Этот проект представляет собой приложение для отслеживания расходов, которое я создал для использования всей семьей. Он построен с использованием Next.js в качестве основного технологического стека, а также Express.js для работы на стороне сервера.
 
-### Technologies Used:
+### Используемые технологии:
 - **Next.js**
 - **ExpressJs**
 - **Tanstack/react-query**
 - **Formik**
 
 
-### Main characteristics:
-1. **Instant creation of expenses and income**. Users can quickly create expense or income entries
-2. **Plan your budget by creating envelopes**
-3. **Track the current state of expenses and income**.
-4. **View the history of expenses and income**.
+### Основные возможности:
+1. **Мгновенное создание расходов и доходов**. Пользователи могут быстро создавать записи о расходах или доходах.
+2. **Планируйте свой бюджет, создавая конверты**
+3. **Отслеживайте текущее состояние расходов и доходов**.
+4. **Просмотр истории расходов и доходов**.
 
 
-### License:
-This project is licensed under the [MIT License](LICENSE).
+### Лицензия:
+Этот проект лицензируется по [MIT License](LICENSE).
